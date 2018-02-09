@@ -1,0 +1,35 @@
+package lab04;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+
+public class Driver{
+
+	public static void main(String[] args){
+
+		List<Integer> removeMe = new ArrayList<>(Arrays.asList(1,2,3,3,4));
+
+		System.out.println(ArrayListPractice.intRemoveAll(removeMe,3));
+
+		List<Integer> alpha = new ArrayList<>(Arrays.asList(1,2,3));
+		List<Integer> other = new ArrayList<>(Arrays.asList(1,2,3));
+		System.out.println(ArrayListPractice.isEqual(removeMe,other));
+		System.out.println(ArrayListPractice.isEqual(alpha,other));	
+
+		Integer[] arrNull = null;
+		Integer[] arr = {4,5,6};
+		try{
+		ArrayListPractice.appendArray(alpha,arrNull);
+		}
+		catch(IllegalArgumentException e){System.out.println(e.getMessage());}
+		ArrayListPractice.appendArray(alpha,arr);
+		System.out.println(alpha);;
+
+		System.out.println(ArrayListPractice.sumElementWise(alpha,other));
+		System.out.println(ArrayListPractice.sumElementWise(other,alpha));
+		
+		
+	}
+
+}
